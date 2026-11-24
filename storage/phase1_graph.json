@@ -1,0 +1,234 @@
+{
+  "directed": true,
+  "multigraph": true,
+  "graph": {},
+  "nodes": [
+    {
+      "name": "Alphabet Inc.",
+      "type": "ORG",
+      "evidence_chunk_id": "doc_09767d107562_c0",
+      "aliases": [
+        "Google"
+      ],
+      "id": "ent_a55f3517bae1"
+    },
+    {
+      "name": "DeepMind",
+      "type": "ORG",
+      "evidence_chunk_id": "doc_09767d107562_c0",
+      "aliases": [],
+      "id": "ent_869d860123ec"
+    },
+    {
+      "name": "MIT",
+      "type": "ORG",
+      "evidence_chunk_id": "doc_09767d107562_c0",
+      "aliases": [],
+      "id": "ent_3e25d18fb71f"
+    },
+    {
+      "name": "Swarm Lab",
+      "type": "ORG",
+      "evidence_chunk_id": "doc_09767d107562_c0",
+      "aliases": [],
+      "id": "ent_ff956b47ec7b"
+    },
+    {
+      "name": "Path Tracer agents",
+      "type": "CONCEPT",
+      "evidence_chunk_id": "doc_09767d107562_c0",
+      "aliases": [],
+      "id": "ent_354d5b64733b"
+    },
+    {
+      "name": "Research Alphabet",
+      "type": "PERSON",
+      "evidence_chunk_id": "doc_09767d107562_c0",
+      "aliases": [],
+      "id": "ent_2e843e4e28ff"
+    },
+    {
+      "name": "Dr. Ada Lovelace",
+      "type": "PERSON",
+      "evidence_chunk_id": "doc_09767d107562_c0",
+      "aliases": [],
+      "id": "ent_fae34769ab97"
+    },
+    {
+      "name": "The Swarm",
+      "type": "PERSON",
+      "evidence_chunk_id": "doc_09767d107562_c0",
+      "aliases": [],
+      "id": "ent_8906b7ca3c92"
+    },
+    {
+      "name": "London",
+      "type": "LOCATION",
+      "evidence_chunk_id": "doc_09767d107562_c0",
+      "aliases": [],
+      "id": "ent_96959383732d"
+    },
+    {
+      "name": "Cambridge",
+      "type": "LOCATION",
+      "evidence_chunk_id": "doc_09767d107562_c0",
+      "aliases": [],
+      "id": "ent_28ac694d45e2"
+    },
+    {
+      "name": "published a paper on Path Tracer agents. Dr. Ada Lovelace leads the Swarm Lab at MIT. The Swarm Lab collaborates with DeepMind on GraphRAG research. Google",
+      "type": "CONCEPT",
+      "evidence_chunk_id": "doc_09767d107562_c0",
+      "aliases": [],
+      "id": "ent_5ae10c92dcfe"
+    },
+    {
+      "name": "published a paper on Path Tracer agents. Dr. Ada Lovelace leads the Swarm Lab at MIT. The Swarm Lab",
+      "type": "CONCEPT",
+      "evidence_chunk_id": "doc_09767d107562_c0",
+      "aliases": [],
+      "id": "ent_7a13e7de9a3d"
+    },
+    {
+      "name": "DeepMind on GraphRAG research",
+      "type": "CONCEPT",
+      "evidence_chunk_id": "doc_09767d107562_c0",
+      "aliases": [],
+      "id": "ent_b84fa7b6909e"
+    },
+    {
+      "name": "published a paper on Path Tracer agents. Dr. Ada Lovelace",
+      "type": "CONCEPT",
+      "evidence_chunk_id": "doc_09767d107562_c0",
+      "aliases": [],
+      "id": "ent_099841abd95b"
+    },
+    {
+      "name": "Swarm Lab at MIT",
+      "type": "CONCEPT",
+      "evidence_chunk_id": "doc_09767d107562_c0",
+      "aliases": [],
+      "id": "ent_702d8cde6596"
+    },
+    {
+      "name": "published a paper on Path Tracer agents. Dr. Ada Lovelace leads the Swarm Lab at MIT. The Swarm Lab collaborates with DeepMind on GraphRAG research. Google acquired DeepMind in 2014. DeepMind",
+      "type": "CONCEPT",
+      "evidence_chunk_id": "doc_09767d107562_c0",
+      "aliases": [],
+      "id": "ent_eeb3e9e039e1"
+    },
+    {
+      "name": "Acme Holdings",
+      "type": "ORG",
+      "evidence_chunk_id": "doc_aceba0bfafce_c0",
+      "aliases": [],
+      "id": "ent_815526e1cd2a"
+    },
+    {
+      "name": "Beacon Ltd",
+      "type": "ORG",
+      "evidence_chunk_id": "doc_aceba0bfafce_c0",
+      "aliases": [],
+      "id": "ent_8cb9df1586e3"
+    },
+    {
+      "name": "Cedar Trust",
+      "type": "ORG",
+      "evidence_chunk_id": "doc_aceba0bfafce_c0",
+      "aliases": [],
+      "id": "ent_0a0b4f10f745"
+    },
+    {
+      "name": "Microsoft",
+      "type": "ORG",
+      "evidence_chunk_id": "doc_c05cbbb3c71a_c0",
+      "aliases": [],
+      "id": "ent_2fee6f87361a"
+    },
+    {
+      "name": "OpenAI",
+      "type": "ORG",
+      "evidence_chunk_id": "doc_c05cbbb3c71a_c0",
+      "aliases": [],
+      "id": "ent_d27ee0355c07"
+    },
+    {
+      "name": "Validator agents",
+      "type": "CONCEPT",
+      "evidence_chunk_id": "doc_c05cbbb3c71a_c0",
+      "aliases": [],
+      "id": "ent_fbfe4b7f23b0"
+    },
+    {
+      "name": "Scout agents",
+      "type": "CONCEPT",
+      "evidence_chunk_id": "doc_c05cbbb3c71a_c0",
+      "aliases": [],
+      "id": "ent_48e8e739c0ad"
+    },
+    {
+      "name": "Validator agents resolve conflicting edge assertions. Scout agents anchor queries to entry nodes. Microsoft",
+      "type": "CONCEPT",
+      "evidence_chunk_id": "doc_c05cbbb3c71a_c0",
+      "aliases": [],
+      "id": "ent_b6a29cd0a634"
+    },
+    {
+      "name": "OpenAI on retrieval research",
+      "type": "CONCEPT",
+      "evidence_chunk_id": "doc_c05cbbb3c71a_c0",
+      "aliases": [],
+      "id": "ent_004ebfa795f7"
+    }
+  ],
+  "links": [
+    {
+      "type": "LOCATED_IN",
+      "confidence": 0.85,
+      "evidence_chunk_id": "doc_09767d107562_c0",
+      "source": "ent_3e25d18fb71f",
+      "target": "ent_28ac694d45e2",
+      "key": 0
+    },
+    {
+      "type": "ACQUIRED",
+      "confidence": 0.85,
+      "evidence_chunk_id": "doc_09767d107562_c0",
+      "source": "ent_5ae10c92dcfe",
+      "target": "ent_869d860123ec",
+      "key": 0
+    },
+    {
+      "type": "COLLABORATES_WITH",
+      "confidence": 0.85,
+      "evidence_chunk_id": "doc_09767d107562_c0",
+      "source": "ent_7a13e7de9a3d",
+      "target": "ent_b84fa7b6909e",
+      "key": 0
+    },
+    {
+      "type": "LEADS",
+      "confidence": 0.85,
+      "evidence_chunk_id": "doc_09767d107562_c0",
+      "source": "ent_099841abd95b",
+      "target": "ent_702d8cde6596",
+      "key": 0
+    },
+    {
+      "type": "LOCATED_IN",
+      "confidence": 0.85,
+      "evidence_chunk_id": "doc_09767d107562_c0",
+      "source": "ent_eeb3e9e039e1",
+      "target": "ent_96959383732d",
+      "key": 0
+    },
+    {
+      "type": "PARTNERS_WITH",
+      "confidence": 0.85,
+      "evidence_chunk_id": "doc_c05cbbb3c71a_c0",
+      "source": "ent_b6a29cd0a634",
+      "target": "ent_004ebfa795f7",
+      "key": 0
+    }
+  ]
+}

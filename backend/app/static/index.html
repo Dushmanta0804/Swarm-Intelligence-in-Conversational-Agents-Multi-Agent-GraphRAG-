@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Nexura — Quantum Multi-Agent Graph Intelligence</title>
+
+  <!-- Typography: Inter + JetBrains Mono -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet" />
+
+  <!-- Core Libraries -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+
+  <style>
+    /* ==========================================================================
+       1. QUANTUM LUXURY TOKENS & AURORA SYSTEM
+       ========================================================================== */
+    :root {
+      --bg-void: #030508;
+      --glass-surface: rgba(10, 16, 28, 0.52);
+      --glass-border: rgba(255, 255, 255, 0.08);
+      --glass-rim-specular: rgba(255, 255, 255, 0.28);
+      
+      --quantum-cyan: #00F5D4;
+      --quantum-plasma: #7928CA;
+      --quantum-gold: #F6E05E;
+      --quantum-emerald: #10B981;
+      --quantum-crimson: #FF0055;
+
+      --text-hero: #F8FAFC;
+      --text-sub: #94A3B8;
+      --text-mono: #64748B;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    body {
+      background-color: var(--bg-void);
+      color: var(--text-hero);
+      font-family: 'Inter', -apple-system, sans-serif;
+      overflow-x: hidden;
+      selection-background-color: var(--quantum-cyan);
+      selection-color: #000;
+    }
+
+    #canvas-container {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      z-index: 1;
+      pointer-events: all;
+    }
+
+    .film-grain {
+      position: fixed;
+      inset: 0;
+      z-index: 2;
+      pointer-events: none;
+      opacity: 0.032;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+    }
+
+    .aurora-plasma {
+      position: fixed;
+      inset: 0;
+      z-index: 0;
+      pointer-events: none;
+      background:
+        radial-gradient(ellipse 60% 50% at 15% 20%, rgba(0, 245, 212, 0.16) 0%, transparent 60%),
+        radial-gradient(ellipse 70% 60% at 85% 30%, rgba(121, 40, 202, 0.18) 0%, transparent 65%),
+        radial-gradient(ellipse 50% 50% at 50% 90%, rgba(16, 185, 129, 0.10) 0%, transparent 60%);
+      filter: blur(80px);
+      animation: auroraBreathe 12s ease-in-out infinite alternate;
+    }
+
+    @keyframes auroraBreathe {
+      0% { transform: scale(1) translateY(0); opacity: 0.8; }
+      50% { transform: scale(1.08) translateY(-20px); opacity: 1; }
+      100% { transform: scale(0.96) translateY(10px); opacity: 0.85; }
+    }
+
+    /* ==========================================================================
+       2. CHROMATIC GLASSMORPHISM & SWISS RETICLES
+       ========================================================================== */
+    .glass-chassis {
+      position: relative;
+      background: var(--glass-surface);
+      border: 1px solid var(--glass-border);
+      border-top: 1px solid var(--glass-rim-specular);
+      border-radius: 24px;
+      backdrop-filter: blur(32px) saturate(190%);
+      -webkit-backdrop-filter: blur(32px) saturate(190%);
+      box-shadow:
+        -1.5px -1.5px 0px rgba(0, 245, 212, 0.22),
+        1.5px 1.5px 0px rgba(121, 40, 202, 0.25),
+        0 30px 60px -12px rgba(0, 0, 0, 0.85),
+        inset 0 1px 0 rgba(255, 255, 255, 0.16);
+      transition: border-color 0.4s cubic-bezier(0.16, 1, 0.3, 1), transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .glass-chassis:hover {
+      border-color: rgba(0, 245, 212, 0.4);
+    }
+
+    .reticle-tl, .reticle-tr, .reticle-bl, .reticle-br {
+      position: absolute;
+      width: 8px;
+      height: 8px;
+      pointer-events: none;
+    }
+    .reticle-tl { top: -4px; left: -4px; border-top: 1.5px solid var(--quantum-gold); border-left: 1.5px solid var(--quantum-gold); }
+    .reticle-tr { top: -4px; right: -4px; border-top: 1.5px solid var(--quantum-gold); border-right: 1.5px solid var(--quantum-gold); }
+    .reticle-bl { bottom: -4px; left: -4px; border-bottom: 1.5px solid var(--quantum-gold); border-left: 1.5px solid var(--quantum-gold); }
+    /* ==========================================================================
+       3. NAVIGATION HUD
+       ========================================================================== */
+    header.hud-nav {
+      position: fixed;
+      top: 24px;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 100;
+      width: calc(100% - 64px);
+      max-width: 1280px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 12px 28px;
+    }
+
+    .brand-wrap {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+
+    .brand-glyph {
+      width: 18px;
+      height: 18px;
+      border: 1.5px solid var(--quantum-cyan);
+      background: radial-gradient(circle, var(--quantum-cyan) 25%, transparent 75%);
+      transform: rotate(45deg);
+      box-shadow: 0 0 16px rgba(0, 245, 212, 0.8);
+      animation: glyphPulse 3s infinite alternate;
+    }
+
+    @keyframes glyphPulse {
+      0% { transform: rotate(45deg) scale(0.9); }
+      100% { transform: rotate(225deg) scale(1.1); }
+    }
+
+    .brand-title {
+      font-weight: 900;
+      letter-spacing: 4px;
+      font-size: 15px;
+      color: var(--text-hero);
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 32px;
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 1.2px;
+      text-transform: uppercase;
+      color: var(--text-sub);
+    }
+
+    .nav-links a {
+      color: inherit;
+      text-decoration: none;
+      transition: color 0.25s ease;
+      cursor: pointer;
+    }
+
+    .nav-links a:hover {
+      color: var(--quantum-cyan);
+    }
+
+    .hud-cta {
+      background: rgba(246, 224, 94, 0.08);
+      border: 1px solid rgba(246, 224, 94, 0.3);
+      color: var(--quantum-gold);
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      padding: 10px 22px;
+      border-radius: 999px;
+      cursor: pointer;
+      backdrop-filter: blur(12px);
+      transition: all 0.3s ease;
+    }
+
+    .hud-cta:hover {
+      background: var(--quantum-gold);
+      color: var(--bg-void);
+      box-shadow: 0 0 24px rgba(246, 224, 94, 0.5);
+    }
+
+    /* ==========================================================================
+       4. SCROLL SECTIONS & HUD PANELS
+       ========================================================================== */
+    .scroll-orchestration {
+      position: relative;
+      z-index: 10;
+      pointer-events: none;
+    }
+
+    section {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      padding: 120px 64px;
+      max-width: 1360px;
+      margin: 0 auto;
+      pointer-events: none;
+    }
+
+    section.align-right {
+      justify-content: flex-end;
+    }
+
+    .interactive-card-wrapper {
+      pointer-events: auto;
+      max-width: 520px;
+      width: 100%;
+    }
+
+    /* Micro-Typography */
+    .quantum-meta {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 10px;
+      font-weight: 600;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--quantum-gold);
+      margin-bottom: 20px;
+    }
+
+    .quantum-dot {
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--quantum-cyan);
+      box-shadow: 0 0 10px var(--quantum-cyan);
+      animation: pulseQuantum 1.8s infinite;
+    }
+
+    @keyframes pulseQuantum {
+      0%, 100% { transform: scale(1); opacity: 1; }
+      50% { transform: scale(0.6); opacity: 0.3; }
+    }
+
+    h1.hero-heading {
+      font-size: 54px;
+      line-height: 1.06;
+      font-weight: 900;
+      letter-spacing: -1.8px;
+      margin-bottom: 20px;
+    }
+
+    h2.section-heading {
+      font-size: 38px;
+      line-height: 1.15;
+      font-weight: 800;
+      letter-spacing: -1.2px;
+      margin-bottom: 16px;
+    }
+
+    p.lead-copy {
+      color: var(--text-sub);
+      font-size: 14px;
+      line-height: 1.75;
+      margin-bottom: 30px;
+      font-weight: 400;
+    }
+    .reticle-br { bottom: -4px; right: -4px; border-bottom: 1.5px solid var(--quantum-gold); border-right: 1.5px solid var(--quantum-gold); }    /* ==========================================================================
+       3. NAVIGATION HUD
+       ========================================================================== */
+    header.hud-nav {
+      position: fixed;
+      top: 24px;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 100;
+      width: calc(100% - 64px);
+      max-width: 1280px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 12px 28px;
+    }
+    .brand-wrap { display: flex; align-items: center; gap: 14px; }
+    .brand-glyph {
+      width: 18px; height: 18px;
+      border: 1.5px solid var(--quantum-cyan);
+      background: radial-gradient(circle, var(--quantum-cyan) 25%, transparent 75%);
+      transform: rotate(45deg);
+      box-shadow: 0 0 16px rgba(0, 245, 212, 0.8);
+      animation: glyphPulse 3s infinite alternate;
+    }
+    @keyframes glyphPulse {
+      0% { transform: rotate(45deg) scale(0.9); }
+      100% { transform: rotate(225deg) scale(1.1); }
+    }
+    .brand-title { font-weight: 900; letter-spacing: 4px; font-size: 15px; color: var(--text-hero); }
+    .nav-links { display: flex; gap: 32px; font-size: 11px; font-weight: 600; letter-spacing: 1.2px; text-transform: uppercase; color: var(--text-sub); }
+    .nav-links a { color: inherit; text-decoration: none; transition: color 0.25s ease; cursor: pointer; }
+    .nav-links a:hover { color: var(--quantum-cyan); }
+    .hud-cta {
+      background: rgba(246, 224, 94, 0.08);
+      border: 1px solid rgba(246, 224, 94, 0.3);
+      color: var(--quantum-gold);
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 10px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase;
+      padding: 10px 22px; border-radius: 999px; cursor: pointer;
+      backdrop-filter: blur(12px); transition: all 0.3s ease;
+    }
+    .hud-cta:hover { background: var(--quantum-gold); color: var(--bg-void); box-shadow: 0 0 24px rgba(246, 224, 94, 0.5); }

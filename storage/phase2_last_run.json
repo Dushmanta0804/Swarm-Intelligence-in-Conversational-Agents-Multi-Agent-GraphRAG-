@@ -1,0 +1,622 @@
+{
+  "query_id": "q_7034a10b",
+  "session_id": "default",
+  "focus_hit": {
+    "hit": true,
+    "overlap": [],
+    "nodes": [
+      {
+        "id": "ent_b84fa7b6909e",
+        "name": "DeepMind on GraphRAG research",
+        "score": 1.0
+      },
+      {
+        "id": "ent_869d860123ec",
+        "name": "DeepMind",
+        "score": 1.0
+      },
+      {
+        "id": "ent_eeb3e9e039e1",
+        "name": "published a paper on Path Tracer agents. Dr. Ada Lovelace leads the Swarm Lab at MIT. The Swarm Lab collaborates with DeepMind on GraphRAG research. Google acquired DeepMind in 2014. DeepMind",
+        "score": 1.0
+      },
+      {
+        "id": "ent_a55f3517bae1",
+        "name": "Alphabet Inc.",
+        "score": 1.0
+      },
+      {
+        "id": "ent_5ae10c92dcfe",
+        "name": "published a paper on Path Tracer agents. Dr. Ada Lovelace leads the Swarm Lab at MIT. The Swarm Lab collaborates with DeepMind on GraphRAG research. Google",
+        "score": 0.9784
+      }
+    ],
+    "from_query": "Who acquired DeepMind?",
+    "skipped_global_search": true
+  },
+  "sub_goals": [
+    {
+      "id": "sg_0_73b961",
+      "question": "Trace shell company transfers from Acme Holdings",
+      "seed_entities": [
+        "Trace",
+        "Acme Holdings"
+      ],
+      "expected_hops": 2
+    }
+  ],
+  "seeds": [
+    {
+      "node_id": "ent_b84fa7b6909e",
+      "name": "DeepMind on GraphRAG research",
+      "anchor_score": 0.99,
+      "source": "focus-cache",
+      "chunk_id": null
+    },
+    {
+      "node_id": "ent_869d860123ec",
+      "name": "DeepMind",
+      "anchor_score": 0.99,
+      "source": "focus-cache",
+      "chunk_id": null
+    },
+    {
+      "node_id": "ent_eeb3e9e039e1",
+      "name": "published a paper on Path Tracer agents. Dr. Ada Lovelace leads the Swarm Lab at MIT. The Swarm Lab collaborates with DeepMind on GraphRAG research. Google acquired DeepMind in 2014. DeepMind",
+      "anchor_score": 0.99,
+      "source": "focus-cache",
+      "chunk_id": null
+    },
+    {
+      "node_id": "ent_a55f3517bae1",
+      "name": "Alphabet Inc.",
+      "anchor_score": 0.99,
+      "source": "focus-cache",
+      "chunk_id": null
+    },
+    {
+      "node_id": "ent_5ae10c92dcfe",
+      "name": "published a paper on Path Tracer agents. Dr. Ada Lovelace leads the Swarm Lab at MIT. The Swarm Lab collaborates with DeepMind on GraphRAG research. Google",
+      "anchor_score": 0.99,
+      "source": "focus-cache",
+      "chunk_id": null
+    }
+  ],
+  "candidates": [
+    {
+      "nodes": [
+        "ent_b84fa7b6909e"
+      ],
+      "node_names": [
+        "DeepMind on GraphRAG research"
+      ],
+      "edges": [],
+      "score": 1.0,
+      "hops": 0,
+      "evidence_chunks": [],
+      "pruned": false,
+      "prune_reason": null
+    },
+    {
+      "nodes": [
+        "ent_869d860123ec"
+      ],
+      "node_names": [
+        "DeepMind"
+      ],
+      "edges": [],
+      "score": 1.0,
+      "hops": 0,
+      "evidence_chunks": [],
+      "pruned": false,
+      "prune_reason": null
+    },
+    {
+      "nodes": [
+        "ent_eeb3e9e039e1"
+      ],
+      "node_names": [
+        "published a paper on Path Tracer agents. Dr. Ada Lovelace leads the Swarm Lab at MIT. The Swarm Lab collaborates with DeepMind on GraphRAG research. Google acquired DeepMind in 2014. DeepMind"
+      ],
+      "edges": [],
+      "score": 1.0,
+      "hops": 0,
+      "evidence_chunks": [],
+      "pruned": false,
+      "prune_reason": null
+    },
+    {
+      "nodes": [
+        "ent_a55f3517bae1"
+      ],
+      "node_names": [
+        "Alphabet Inc."
+      ],
+      "edges": [],
+      "score": 1.0,
+      "hops": 0,
+      "evidence_chunks": [],
+      "pruned": false,
+      "prune_reason": null
+    },
+    {
+      "nodes": [
+        "ent_5ae10c92dcfe"
+      ],
+      "node_names": [
+        "published a paper on Path Tracer agents. Dr. Ada Lovelace leads the Swarm Lab at MIT. The Swarm Lab collaborates with DeepMind on GraphRAG research. Google"
+      ],
+      "edges": [],
+      "score": 1.0,
+      "hops": 0,
+      "evidence_chunks": [],
+      "pruned": false,
+      "prune_reason": null
+    }
+  ],
+  "validated": [
+    {
+      "nodes": [
+        "ent_b84fa7b6909e"
+      ],
+      "node_names": [
+        "DeepMind on GraphRAG research"
+      ],
+      "edges": [],
+      "score": 1.0,
+      "hops": 0,
+      "evidence_chunks": [],
+      "pruned": false,
+      "prune_reason": null
+    },
+    {
+      "nodes": [
+        "ent_869d860123ec"
+      ],
+      "node_names": [
+        "DeepMind"
+      ],
+      "edges": [],
+      "score": 1.0,
+      "hops": 0,
+      "evidence_chunks": [],
+      "pruned": false,
+      "prune_reason": null
+    },
+    {
+      "nodes": [
+        "ent_eeb3e9e039e1"
+      ],
+      "node_names": [
+        "published a paper on Path Tracer agents. Dr. Ada Lovelace leads the Swarm Lab at MIT. The Swarm Lab collaborates with DeepMind on GraphRAG research. Google acquired DeepMind in 2014. DeepMind"
+      ],
+      "edges": [],
+      "score": 1.0,
+      "hops": 0,
+      "evidence_chunks": [],
+      "pruned": false,
+      "prune_reason": null
+    },
+    {
+      "nodes": [
+        "ent_a55f3517bae1"
+      ],
+      "node_names": [
+        "Alphabet Inc."
+      ],
+      "edges": [],
+      "score": 1.0,
+      "hops": 0,
+      "evidence_chunks": [],
+      "pruned": false,
+      "prune_reason": null
+    },
+    {
+      "nodes": [
+        "ent_5ae10c92dcfe"
+      ],
+      "node_names": [
+        "published a paper on Path Tracer agents. Dr. Ada Lovelace leads the Swarm Lab at MIT. The Swarm Lab collaborates with DeepMind on GraphRAG research. Google"
+      ],
+      "edges": [],
+      "score": 1.0,
+      "hops": 0,
+      "evidence_chunks": [],
+      "pruned": false,
+      "prune_reason": null
+    }
+  ],
+  "metrics": {
+    "latency_s": 0.004,
+    "visited": 5,
+    "pruned": 7,
+    "candidates": 5,
+    "validated": 5,
+    "llm_calls": 0,
+    "blackboard": {
+      "query_id": "q_7034a10b",
+      "visited": 5,
+      "pruned": 7,
+      "paths": 5,
+      "active_agents": 0,
+      "top_pheromones": [
+        [
+          "ent_b84fa7b6909e",
+          0.0
+        ],
+        [
+          "ent_869d860123ec",
+          0.0
+        ],
+        [
+          "ent_eeb3e9e039e1",
+          0.0
+        ],
+        [
+          "ent_a55f3517bae1",
+          0.0
+        ],
+        [
+          "ent_5ae10c92dcfe",
+          0.0
+        ]
+      ],
+      "events": 34
+    },
+    "focus_cached": true,
+    "focus_hit": true
+  },
+  "trail": [
+    {
+      "t": 1792128822.7417548,
+      "agent": "dispatcher",
+      "action": "registered",
+      "detail": {
+        "agent_id": "dispatcher_0"
+      }
+    },
+    {
+      "t": 1792128822.7417548,
+      "agent": "dispatcher",
+      "action": "decomposed",
+      "detail": {
+        "goals": [
+          "Trace shell company transfers from Acme Holdings"
+        ],
+        "focus_hit": true
+      }
+    },
+    {
+      "t": 1792128822.7428155,
+      "agent": "scout",
+      "action": "registered",
+      "detail": {
+        "agent_id": "scout_0"
+      }
+    },
+    {
+      "t": 1792128822.7428155,
+      "agent": "scout",
+      "action": "visited",
+      "detail": {
+        "node": "ent_b84fa7b6909e"
+      }
+    },
+    {
+      "t": 1792128822.7428155,
+      "agent": "scout",
+      "action": "visited",
+      "detail": {
+        "node": "ent_869d860123ec"
+      }
+    },
+    {
+      "t": 1792128822.7428155,
+      "agent": "scout",
+      "action": "visited",
+      "detail": {
+        "node": "ent_eeb3e9e039e1"
+      }
+    },
+    {
+      "t": 1792128822.7428155,
+      "agent": "scout",
+      "action": "visited",
+      "detail": {
+        "node": "ent_a55f3517bae1"
+      }
+    },
+    {
+      "t": 1792128822.7428155,
+      "agent": "scout",
+      "action": "visited",
+      "detail": {
+        "node": "ent_5ae10c92dcfe"
+      }
+    },
+    {
+      "t": 1792128822.7428155,
+      "agent": "scout",
+      "action": "focus_anchored",
+      "detail": {
+        "nodes": [
+          "ent_b84fa7b6909e",
+          "ent_869d860123ec",
+          "ent_eeb3e9e039e1",
+          "ent_a55f3517bae1",
+          "ent_5ae10c92dcfe"
+        ],
+        "skipped_global_search": true
+      }
+    },
+    {
+      "t": 1792128822.7428155,
+      "agent": "scout",
+      "action": "anchored",
+      "detail": {
+        "seeds": [
+          {
+            "node_id": "ent_b84fa7b6909e",
+            "name": "DeepMind on GraphRAG research",
+            "anchor_score": 0.99,
+            "source": "focus-cache",
+            "chunk_id": null
+          },
+          {
+            "node_id": "ent_869d860123ec",
+            "name": "DeepMind",
+            "anchor_score": 0.99,
+            "source": "focus-cache",
+            "chunk_id": null
+          },
+          {
+            "node_id": "ent_eeb3e9e039e1",
+            "name": "published a paper on Path Tracer agents. Dr. Ada Lovelace leads the Swarm Lab at MIT. The Swarm Lab collaborates with DeepMind on GraphRAG research. Google acquired DeepMind in 2014. DeepMind",
+            "anchor_score": 0.99,
+            "source": "focus-cache",
+            "chunk_id": null
+          },
+          {
+            "node_id": "ent_a55f3517bae1",
+            "name": "Alphabet Inc.",
+            "anchor_score": 0.99,
+            "source": "focus-cache",
+            "chunk_id": null
+          },
+          {
+            "node_id": "ent_5ae10c92dcfe",
+            "name": "published a paper on Path Tracer agents. Dr. Ada Lovelace leads the Swarm Lab at MIT. The Swarm Lab collaborates with DeepMind on GraphRAG research. Google",
+            "anchor_score": 0.99,
+            "source": "focus-cache",
+            "chunk_id": null
+          }
+        ]
+      }
+    },
+    {
+      "t": 1792128822.7428155,
+      "agent": "tracer",
+      "action": "registered",
+      "detail": {
+        "agent_id": "tracer_ent_b84f",
+        "seed": "ent_b84fa7b6909e"
+      }
+    },
+    {
+      "t": 1792128822.7428155,
+      "agent": "tracer",
+      "action": "pheromone_deposit",
+      "detail": {
+        "node": "ent_b84fa7b6909e",
+        "amount": 1.0,
+        "level": 1.0
+      }
+    },
+    {
+      "t": 1792128822.7428155,
+      "agent": "tracer",
+      "action": "pruned",
+      "detail": {
+        "node": "ent_7a13e7de9a3d",
+        "reason": "relevance 0.35 < 0.6"
+      }
+    },
+    {
+      "t": 1792128822.7428155,
+      "agent": "tracer",
+      "action": "dead_end_blacklisted",
+      "detail": {
+        "node": "ent_b84fa7b6909e"
+      }
+    },
+    {
+      "t": 1792128822.7439501,
+      "agent": "tracer",
+      "action": "registered",
+      "detail": {
+        "agent_id": "tracer_ent_869d",
+        "seed": "ent_869d860123ec"
+      }
+    },
+    {
+      "t": 1792128822.7439501,
+      "agent": "tracer",
+      "action": "pheromone_deposit",
+      "detail": {
+        "node": "ent_869d860123ec",
+        "amount": 1.0,
+        "level": 1.0
+      }
+    },
+    {
+      "t": 1792128822.7439501,
+      "agent": "tracer",
+      "action": "pruned",
+      "detail": {
+        "node": "ent_5ae10c92dcfe",
+        "reason": "relevance 0.35 < 0.6"
+      }
+    },
+    {
+      "t": 1792128822.7439501,
+      "agent": "tracer",
+      "action": "dead_end_blacklisted",
+      "detail": {
+        "node": "ent_869d860123ec"
+      }
+    },
+    {
+      "t": 1792128822.7449927,
+      "agent": "tracer",
+      "action": "registered",
+      "detail": {
+        "agent_id": "tracer_ent_eeb3",
+        "seed": "ent_eeb3e9e039e1"
+      }
+    },
+    {
+      "t": 1792128822.7449927,
+      "agent": "tracer",
+      "action": "pheromone_deposit",
+      "detail": {
+        "node": "ent_eeb3e9e039e1",
+        "amount": 1.0,
+        "level": 1.0
+      }
+    },
+    {
+      "t": 1792128822.7449927,
+      "agent": "tracer",
+      "action": "pruned",
+      "detail": {
+        "node": "ent_96959383732d",
+        "reason": "relevance 0.35 < 0.6"
+      }
+    },
+    {
+      "t": 1792128822.7449927,
+      "agent": "tracer",
+      "action": "dead_end_blacklisted",
+      "detail": {
+        "node": "ent_eeb3e9e039e1"
+      }
+    },
+    {
+      "t": 1792128822.7449927,
+      "agent": "tracer",
+      "action": "registered",
+      "detail": {
+        "agent_id": "tracer_ent_a55f",
+        "seed": "ent_a55f3517bae1"
+      }
+    },
+    {
+      "t": 1792128822.7449927,
+      "agent": "tracer",
+      "action": "pheromone_deposit",
+      "detail": {
+        "node": "ent_a55f3517bae1",
+        "amount": 1.0,
+        "level": 1.0
+      }
+    },
+    {
+      "t": 1792128822.7449927,
+      "agent": "tracer",
+      "action": "dead_end_blacklisted",
+      "detail": {
+        "node": "ent_a55f3517bae1"
+      }
+    },
+    {
+      "t": 1792128822.7449927,
+      "agent": "tracer",
+      "action": "registered",
+      "detail": {
+        "agent_id": "tracer_ent_5ae1",
+        "seed": "ent_5ae10c92dcfe"
+      }
+    },
+    {
+      "t": 1792128822.7449927,
+      "agent": "tracer",
+      "action": "pheromone_deposit",
+      "detail": {
+        "node": "ent_5ae10c92dcfe",
+        "amount": 1.0,
+        "level": 1.0
+      }
+    },
+    {
+      "t": 1792128822.7449927,
+      "agent": "tracer",
+      "action": "dead_end_blacklisted",
+      "detail": {
+        "node": "ent_5ae10c92dcfe"
+      }
+    },
+    {
+      "t": 1792128822.7460072,
+      "agent": "validator",
+      "action": "registered",
+      "detail": {
+        "agent_id": "validator_0"
+      }
+    },
+    {
+      "t": 1792128822.7460072,
+      "agent": "validator",
+      "action": "path_accepted",
+      "detail": {
+        "nodes": [
+          "DeepMind on GraphRAG research"
+        ],
+        "score": 1.0
+      }
+    },
+    {
+      "t": 1792128822.7460072,
+      "agent": "validator",
+      "action": "path_accepted",
+      "detail": {
+        "nodes": [
+          "DeepMind"
+        ],
+        "score": 1.0
+      }
+    },
+    {
+      "t": 1792128822.7460072,
+      "agent": "validator",
+      "action": "path_accepted",
+      "detail": {
+        "nodes": [
+          "published a paper on Path Tracer agents. Dr. Ada Lovelace leads the Swarm Lab at MIT. The Swarm Lab collaborates with DeepMind on GraphRAG research. Google acquired DeepMind in 2014. DeepMind"
+        ],
+        "score": 1.0
+      }
+    },
+    {
+      "t": 1792128822.7460072,
+      "agent": "validator",
+      "action": "path_accepted",
+      "detail": {
+        "nodes": [
+          "Alphabet Inc."
+        ],
+        "score": 1.0
+      }
+    },
+    {
+      "t": 1792128822.7460072,
+      "agent": "validator",
+      "action": "path_accepted",
+      "detail": {
+        "nodes": [
+          "published a paper on Path Tracer agents. Dr. Ada Lovelace leads the Swarm Lab at MIT. The Swarm Lab collaborates with DeepMind on GraphRAG research. Google"
+        ],
+        "score": 1.0
+      }
+    }
+  ]
+}

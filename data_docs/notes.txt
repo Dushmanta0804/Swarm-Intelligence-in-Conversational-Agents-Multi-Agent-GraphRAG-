@@ -1,0 +1,1 @@
+Validator agents resolve conflicting edge assertions. Scout agents anchor queries to entry nodes. Microsoft partners with OpenAI on retrieval research.
